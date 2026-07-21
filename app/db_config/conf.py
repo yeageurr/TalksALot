@@ -8,4 +8,4 @@ psql_config = {
   "db": "talksalot"
 }
 
-BASE = Path(__file__).resolve.parent
+BASE = Path(__file__).resolve().parent

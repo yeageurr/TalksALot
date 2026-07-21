@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy_utils import create_database, database_exists
-from conf import psql_config as config
+from app.db_config.conf import psql_config as config
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 class Base(DeclarativeBase):

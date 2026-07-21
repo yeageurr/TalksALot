@@ -1,0 +1,1 @@
+from app.db_config import generate_tables
