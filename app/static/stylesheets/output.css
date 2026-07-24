@@ -1,4 +1,6 @@
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -8,10 +10,15 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-indigo-600: oklch(51.1% 0.262 276.966);
-    --color-black: #000;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-display: "Poppins", sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --page-bg: #1E2430;
+    --texts-foreground: #F4F6F8;
+    --texts-hover: #ff7300;
+    --button-bg: #4287f5;
+    --button-hover: #689df2;
   }
 }
 @layer base {
@@ -166,6 +173,15 @@
   .static {
     position: static;
   }
+  .m-0 {
+    margin: 0px;
+  }
+  .mb-\[\.5em\] {
+    margin-bottom: .5em;
+  }
+  .box-border {
+    box-sizing: border-box;
+  }
   .flex {
     display: flex;
   }
@@ -193,34 +209,54 @@
   .flex-col {
     flex-direction: column;
   }
-  .flex-row {
-    flex-direction: row;
-  }
-  .items-center {
-    align-items: center;
+  .items-start {
+    align-items: flex-start;
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-\[3em\] {
+    gap: 3em;
+  }
+  .rounded-\[1em\] {
+    border-radius: 1em;
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
+  .bg-\(--button-bg\) {
+    background-color: var(--button-bg);
   }
-  .border-indigo-600 {
-    border-color: var(--color-indigo-600);
+  .bg-\(--page-bg\) {
+    background-color: var(--page-bg);
   }
-  .bg-black {
-    background-color: var(--color-black);
+  .p-0 {
+    padding: 0px;
+  }
+  .px-\[3em\] {
+    padding-inline: 3em;
+  }
+  .py-\[\.3em\] {
+    padding-block: .3em;
+  }
+  .pl-\[8em\] {
+    padding-left: 8em;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .text-\[3\.5em\] {
+    font-size: 3.5em;
   }
   .text-\[20px\] {
     font-size: 20px;
   }
-  .text-black {
-    color: var(--color-black);
+  .text-\(--texts-foreground\) {
+    color: var(--texts-foreground);
   }
   .underline {
     text-decoration-line: underline;
@@ -228,6 +264,14 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  @media (hover: hover) {
+    .hover\:bg-\(--button-hover\):hover {
+      background-color: var(--button-hover);
+    }
+    .hover\:text-\(--texts-hover\):hover {
+      color: var(--texts-hover);
+    }
   }
 }
 @property --tw-border-style {
