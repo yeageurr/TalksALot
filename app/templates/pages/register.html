@@ -24,14 +24,13 @@
             class="outline-none pl-[.7em] py-[.3em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]" 
             type="password" placeholder="Enter password" autocomplete="off" id="password" name="password"
           />
-          <i class='bx bx-show-alt absolute right-[.5em]'></i>
         </div>
         <div class="flex items-center justify-start relative border-b w-[90%] mb-[.8em]" id="cpasswDiv">
           <input 
             class="outline-none pl-[.7em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]"
             type="password" placeholder="Confirm password" autocomplete="off" id="confirmPass" name="confirmPass"
           />
-          <i class='bx bx-show-alt absolute right-[.5em]'></i>
+          <i class='bx bx-show-alt absolute right-[.5em] cursor-pointer' onclick="toggle_password()" id="pass_icon" title="Show Password"></i>
         </div>
         <input 
           class="border-b px-[.7em] py-[.3em] outline-none text-[.9em] w-[90%]"

@@ -7,6 +7,24 @@ const confirmPassInput = document.getElementById('confirmPass');
 const emailInput = document.getElementById('email');
 const termsBox = document.getElementById('terms');
 
+const passwIcon = document.getElementById('pass_icon');
+const show_icon = "bx-show-alt";
+const hide_icon = "bx-hide";
+
+
+async function register(e) {
+  e.preventDefault();
+
+  const formData = new FormData();
+  const keys = ["username", "password", "email"]
+  const fields = [usernameInput, passwordInput, emailInput]
+
+  for (let i = 0; i < keys.length; i++) {
+    formData.append(keys[i], fields[i].value.trim());
+    log(`${keys[i]} : ${fields[i].value.trim()}`)
+  }
+}
+
 function check_empty_values(val, field) {
   if (val.value.trim().length == 0) {
     alert(`${field} cannot be empty!`);
@@ -60,5 +78,22 @@ function validate(e) {
     return;
   }
 
-  alert("Registered!")
+  register(e);
+}
+
+let flag = true;
+function toggle_password() {
+  if(flag) {
+    passwIcon.classList.remove(show_icon);
+    passwIcon.classList.add(hide_icon);
+    passwordInput.setAttribute('type', 'text');
+    confirmPassInput.setAttribute('type', 'text');
+    flag = !flag;
+  } else if (!flag) {
+    passwIcon.classList.remove(hide_icon);
+    passwIcon.classList.add(show_icon);
+    passwordInput.setAttribute('type', 'password');
+    confirmPassInput.setAttribute('type', 'password');
+    flag = !flag;
+  }
 }
