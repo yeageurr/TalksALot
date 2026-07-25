@@ -54,3 +54,7 @@ def login_page(request: Request):
         "title": title,
       }
   )
+
+@app.post('/auth-signup')
+async def authenticate_signup(request: Request):
+  pass

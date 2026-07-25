@@ -5,36 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', path='stylesheets/output.css') }}">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .error { border-bottom: 1px solid #ff2323; }
+  </style>
   <title>{{ title }}</title>
 </head>
 <body class="m-0 p-0 w-screen h-screen text-[20px] box-border text-(--texts-foreground) font-display">
   <div class="w-full h-full flex justify-center items-center bg-(--page-bg)">
-    <div class="flex flex-col justify-start items-center border-[.15em] border-(--form-border) rounded-[.5em] bg-(--form-bg) px-[2rem] py-[1.5rem] w-120 h-120">
+    <div class="flex flex-col justify-start items-center border-[.15em] border-(--form-border) rounded-[.5em] bg-(--form-bg) px-[2rem] py-[1.5rem] w-120 h-125">
       <p class="font-heading font-normal text-[2em]">Create an Account</p>
-      <form onsubmit="" class="flex flex-col justify-center items-center gap-[.8em] w-[90%] h-full">
+      <form onsubmit="validate(event)" class="flex flex-col justify-center items-center w-[90%] h-full mt-[1rem]">
         <input 
         class="border-b px-[.7em] py-[.3em] outline-none text-[.9em] w-[90%]"
-        type="text" placeholder="Enter username" autocomplete="off" required 
+        type="text" placeholder="Enter username" autocomplete="off" id="username" name="username"
         />
-        <div class="flex items-center justify-start relative border-b w-[90%]">
+        <div class="flex items-center justify-start relative border-b w-[90%] my-[.8em]" id="passwDiv">
           <input
-          class="outline-none pl-[.7em] py-[.3em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]" 
-          type="password" placeholder="Enter password" autocomplete="off" required 
+            class="outline-none pl-[.7em] py-[.3em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]" 
+            type="password" placeholder="Enter password" autocomplete="off" id="password" name="password"
           />
           <i class='bx bx-show-alt absolute right-[.5em]'></i>
         </div>
-        <div class="flex items-center justify-start relative border-b w-[90%]">
+        <div class="flex items-center justify-start relative border-b w-[90%] mb-[.8em]" id="cpasswDiv">
           <input 
-          class="outline-none pl-[.7em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]"
-          type="password" placeholder="Confirm password" autocomplete="off" required 
+            class="outline-none pl-[.7em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]"
+            type="password" placeholder="Confirm password" autocomplete="off" id="confirmPass" name="confirmPass"
           />
           <i class='bx bx-show-alt absolute right-[.5em]'></i>
         </div>
         <input 
-        class="border-b px-[.7em] py-[.3em] outline-none text-[.9em] w-[90%]"
-        type="email" placeholder="Enter email" autocomplete="off" required 
+          class="border-b px-[.7em] py-[.3em] outline-none text-[.9em] w-[90%]"
+          type="email" placeholder="Enter email" autocomplete="off" id="email" name="email"
         />
-        <button class="bg-(--button-bg) w-[90%] h-[2.5rem] rounded-[.3rem] mt-[.8rem]" type="submit">Sign Up</button>
+        <div class="flex items-center justify-center gap-[.3em] mt-[1.5em]">
+          <input
+            class="accent-(--accent-color) cursor-pointer"
+            type="checkbox" name="terms" id="terms"
+            
+          />
+          <p class="text-[.6em]">
+            I agree to the 
+            <a href="" class="hover:underline">
+              Terms and Policies
+            </a>
+            of
+            <span class="font-semibold">
+              Chat App
+            </span>
+          </p>
+        </div>
+        <button 
+          class="bg-(--button-bg) w-[90%] h-[2.5rem] rounded-[.3rem] mt-[.8rem] cursor-pointer hover:bg-(--button-hover)" 
+          type="submit"
+        >
+          Sign Up
+        </button>
       </form>
       <p class="text-[.8em] mb-[1rem]">
         Already have an account?
@@ -42,5 +67,7 @@
       </p>
     </div>
   </div>
+
+  <script src="{{ url_for('static', path='javascript/register.js') }}"></script>
 </body>
 </html>
