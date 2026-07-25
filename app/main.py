@@ -28,7 +28,29 @@ def index_page(request: Request):
     request = request,
     name = "index.html",
     context = {
-      "request": request,
       "title": title
     }
+  )
+
+@app.get("/signup")
+def signup_page(request: Request):
+  title = "Chat App — Sign Up"
+  return templates.TemplateResponse(
+    request=request,
+    name="pages/register.html",
+    context={
+      "title": title,
+    }
+  )
+
+
+@app.get("/login")
+def login_page(request: Request):
+  title = "Chat App — Login"
+  return templates.TemplateResponse(
+      request=request,
+      name="pages/login.html",
+      context={
+        "title": title,
+      }
   )

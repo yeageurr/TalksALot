@@ -12,9 +12,11 @@
   /* Color themes */
   --page-bg: #1E2430;
   --form-bg: #2A3142;
+  --form-border: #294998;
   --input-foreground: #333B4F;
+  --input-border: #00D0FF;
   --texts-foreground: #F4F6F8;
   --texts-hover: #ff7300;
-  --button-bg: #4287f5;
-  --button-hover: #689df2;
+  --button-bg: #006AE4;
+  --button-hover: #2683ed;
 }

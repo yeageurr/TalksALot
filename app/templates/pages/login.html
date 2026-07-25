@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', path='stylesheets/output.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>{{ title }}</title>
+</head>
+<body class="m-0 p-0 w-screen h-screen text-[20px] box-border text-(--texts-foreground) font-display">
+  <div class="w-full h-full flex justify-center items-center bg-(--page-bg)">
+    <div class="flex flex-col justify-start items-center border-[.15em] border-(--form-border) rounded-[.5em] bg-(--form-bg) px-[2rem] py-[1.5rem] w-120 h-120">
+      <p class="font-heading font-normal text-[2em]">Login</p>
+      <form onsubmit="" class="flex flex-col justify-center items-center gap-[1.5em] w-[90%] h-full">
+        <input 
+        class="border-b px-[.7em] py-[.3em] outline-none text-[.9em] w-[90%]"
+        type="text" placeholder="Enter username" autocomplete="off" required 
+        />
+        <div class="flex items-center justify-start relative border-b w-[90%]">
+          <input
+          class="outline-none pl-[.7em] py-[.3em] pr-[2.7rem] w-[100%] text-[.9em] py-[.3em]" 
+          type="password" placeholder="Enter password" autocomplete="off" required 
+          />
+          <i class='bx bx-show-alt absolute right-[.5em]'></i>
+        </div>
+        <button class="bg-(--button-bg) w-[90%] h-[2.5rem] rounded-[.3rem] mt-[.8rem]" type="submit">Login</button>
+      </form>
+      <p class="text-[.8em] mb-[1rem]">
+        Haven't registered yet?
+        <a class="hover:text-(--texts-hover) hover:underline" href="/signup">Signup here</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
